@@ -9,34 +9,55 @@
 <body>
     <div class="image-list">
         <div class="image-item">
-            <img src="./images/AlanTuring.jpg">
+            <img src="./images/AlanTuring.jpg"  alt="Alan Turing" data-bio="Alan Turing était un mathématicien et cryptologue britannique connu pour avoir déchiffré le code Enigma.">
             <p>AlanTuring</p>
         </div>
 
         <div class="image-item">
-            <img src="./images/DennisRitchie.jpg">
+            <img src="./images/DennisRitchie.jpg" alt="DennisRitchie" data-bio="Dennis Ritchie est l'inventeur du langage de programmation C, qu'il a conçu dans les années 1970 chez Bell Labs. C'est devenu l'un des langages les plus influents et sert de base à de nombreux autres langages modernes comme C++, Java, C#">
             <p>DennisRitchie</p>
         </div>
 
         <div class="image-item">
-            <img src="./images/LinusTorvalds.jpg">
+            <img src="./images/LinusTorvalds.jpg" alt="LinusTorvalds" data-bio="Linus est une figure centrale du mouvement open source. Git, le système de gestion de version qu'il a créé, est également utilisé massivement par les développeurs.
+            ">
             <p>LinusTorvalds</p>
         </div>
 
         <div class="image-item">
-            <img src="./images/GraceHopper.jpg">
+            <img src="./images/GraceHopper.jpg" alt="GraceHopper" data-bio="Hopper a commencé sa carrière en tant que mathématicienne et est devenue une des premières femmes à s'impliquer profondément dans l'informatique, à une époque où le domaine était largement dominé par les hommes.
+            ">
             <p>GraceHopper</p>
         </div>
 
         <div class="image-item">
-            <img src="./images/TimBernersLee.jpg">
+            <img src="./images/TimBernersLee.jpg" alt="TimBernersLee" data-bio="nventeur du premier compilateur pour ordinateur, un outil qui traduit le code source en langage machine.
+            A participé au développement de COBOL, l'un des premiers langages de programmation de haut niveau.">
             <p>TimBernersLee</p>
         </div>
         
         <div class="image-item">
-            <img src="./images/RichardStallman.jpg">
+            <img src="./images/RichardStallman.jpg" alt="RichardStallman" data-bio="Richard Stallman est un pionnier et un militant des libertés numériques, souvent considéré comme le père spirituel du mouvement du logiciel libre. Ses idées ont profondément influencé le développement du logiciel libre, y compris des projets comme Linux, qui repose en grande partie sur le travail">
             <p>RichardStallman</p>
         </div>
     </div>
+
+    <div class="bio" id="bio"></div>
+
+    <script>
+        // Récupère toutes les images
+        const images = document.querySelectorAll('.image-item img');
+        const bioDiv = document.getElementById('bio');
+
+        // Ajoute un événement au clic pour chaque image
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                // Récupère la biographie depuis l'attribut data-bio
+                const bio = image.getAttribute('data-bio');
+                // Affiche la biographie dans le div bio
+                bioDiv.textContent = bio;
+            });
+        });
+    </script>
 </body>
 </html>
